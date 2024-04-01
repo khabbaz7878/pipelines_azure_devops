@@ -6,7 +6,7 @@ pool:
 
 steps:
 - checkout: self
-  submodule: true
+
 
 - script: |
     python -m venv venv
