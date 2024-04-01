@@ -2,24 +2,9 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- checkout: self
-
-
 - script: |
-    python -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-  displayName: 'Install dependencies'
-
-- script: |
-    python main.py
-  displayName: 'Run code'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    path: '$(System.DefaultWorkingDirectory)/venv/bin'
-    artifactName: 'artifact'
-  displayName: 'Publish Artifact: drop'
+    python sumof3.py
+  displayName: 'Run Python script'  
